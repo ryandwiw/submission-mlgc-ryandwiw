@@ -22,6 +22,7 @@ class PredictionController {
     const prediction = new Prediction(id, label, suggestion, createdAt);
     await storeData(id, prediction);
 
+    // Message Response Model
     const response = h.response({
     status: "success",
     message: "Model is predicted successfully", 
