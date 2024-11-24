@@ -23,13 +23,10 @@ class PredictionController {
     await storeData(id, prediction);
 
     const response = h.response({
-      status: "success",
-      message:
-        confidenceScore > 99
-          ? "Model is predicted successfully"
-          : "Model is predicted successfully but under threshold. Please use the correct picture",
-      data: prediction,
-    });
+    status: "success",
+    message: "Model is predicted successfully", 
+    data: prediction,
+  });
 
     response.code(201);
     return response;
