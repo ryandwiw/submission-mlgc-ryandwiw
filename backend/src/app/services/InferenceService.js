@@ -24,7 +24,7 @@ class InferenceService {
       return { confidenceScore, label, suggestion };
     } catch (error) {
       console.log(error);
-      throw new InputError("Error during prediction");
+      throw new InputError("Terjadi kesalahan dalam melakukan prediksi");
     }
   }
 }
