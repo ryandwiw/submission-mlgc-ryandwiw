@@ -19,7 +19,7 @@ class InferenceService {
 
       let suggestion = label === "Cancer"
         ? "Segera periksa ke dokter!"
-        : "Selamat anda masih sehat!";
+        : "Penyakit kanker tidak terdeteksi.";
 
       return { confidenceScore, label, suggestion };
     } catch (error) {
