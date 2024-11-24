@@ -8,7 +8,7 @@ const PredictionController = require("../app/controllers/PredictionController");
 const init = async () => {
   const server = Hapi.server({
     port: configs.port,
-    host: "localhost",
+    host: "0.0.0.0",
     routes: {
       cors: {
         origin: ["*"],
