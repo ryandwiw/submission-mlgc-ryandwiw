@@ -1,15 +1,23 @@
+# Menggunakan image Node.js sebagai base image
 FROM node:18
 
+# Menentukan direktori kerja di dalam container
 WORKDIR /usr/src/app
 
+# Menyalin package.json dan package-lock.json ke dalam container
 COPY package*.json ./
 
-RUN npm install
+# Menginstall dependencies
+RUN npm install 
 
-RUN npm install -g nodemon
-
+# Menyalin seluruh kode sumber ke dalam container
 COPY . .
 
-EXPOSE 8080
+# Mengatur variabel lingkungan untuk port
+ENV PORT=5000
 
-CMD ["npm", "start"]
+# Mengekspos port yang digunakan oleh aplikasi
+EXPOSE 5000
+
+# Menjalankan aplikasi
+CMD ["node", "./backend/src/main/server.js"]
